@@ -27,7 +27,7 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle.kts') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-      - run: ./gradlew build
+      - run: ./gradlew shadowJar --full-stacktrace
 
       - uses: actions/upload-artifact@v2
         with:
